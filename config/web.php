@@ -46,8 +46,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                // Quy tắc Catch-All phải được đặt CUỐI CÙNG
-                // <all:.*> sẽ khớp với MỌI đường dẫn và chuyển nó về site/index
+                require(__DIR__ . '/api.php'),
                 '<all:.*>' => 'site/index',
             ]
         ],
