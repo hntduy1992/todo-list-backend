@@ -46,8 +46,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                require(__DIR__ . '/api.php'),
-                '<all:.*>' => 'site/index',
+                'api' => require(__DIR__ . '/api.php'),
+                '<path:.*>' => 'index'
             ]
         ],
     ],

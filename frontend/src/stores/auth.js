@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import {computed, ref} from "vue";
+import api from "../services/api.js";
 
 export const authStore = defineStore('authStore', () => {
     const token = ref(null)
@@ -29,6 +30,15 @@ export const authStore = defineStore('authStore', () => {
     }
 
     function fetchUser() {
+        if (!token) return;
+        try {
+            api.get('/users/me').then(res => {
+                user.value = res.data
+            })
+        } catch (e) {
+            clearToken()
+            console.error("Failed to fetch user:", e);
+        }
 
     }
 

@@ -1,9 +1,11 @@
 <script setup>
+
 </script>
 
 <template>
-  <router-view></router-view>
+  Task page
 </template>
 
 <style scoped>
+
 </style>

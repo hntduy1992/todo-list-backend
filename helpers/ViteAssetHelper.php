@@ -2,6 +2,7 @@
 
 namespace helpers;
 
+use Yii;
 use yii\helpers\Json;
 
 class ViteAssetHelper
